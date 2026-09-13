@@ -1,0 +1,49 @@
+.title-name-container {
+    padding-bottom: 0;
+
+    font-size: 11vw;
+    font-family: "JetBrains Mono Bold", Arial, sans-serif;
+    text-align: left;
+    line-height: 1;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+
+    height: 100vh;
+    width: 50%;
+
+    animation: 1s ease 0.1s 1 scale-in;
+    animation-fill-mode: backwards;
+}
+
+.title-name-container>p {
+    margin: 0;
+    margin-left: 128px;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+@media only screen and (max-width: 600px) {
+    .title-name-container {
+        padding: 1em;
+        display: flex;
+        font-size: 4em;
+    }
+
+    .title-name-container>p {
+        margin: auto;
+    }
+}
+
+@keyframes scale-in {
+    0% {
+        opacity: 0;
+        line-height: 0.1;
+    }
+
+    100% {
+        opacity: 1;
+        line-height: 1;
+    }
+}

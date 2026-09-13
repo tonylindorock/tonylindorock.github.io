@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<!-- HEAD -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="strict-origin">
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" onerror="onErrorLoader(this, 'assets/font-awesome-4.7.0/css/font-awesome.min.css')">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_proj.css">
+
+    <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" onerror="onErrorLoader(this, 'js/jquery-4.0.0.min.js')"></script>
+    <script src="js/parallax_banner.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/video.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/script_proj.js"></script>
+
+
+    <link rel="icon" href="favicon.png">
+    <title>A Town Called Woods</title>
+</head>
+
+<!-- BODY -->
+
+<body>
+    <div class="nav-bar" style="position: absolute; left: 0; top: 0">
+        <a class="nav-bar-title">YICHEN WANG</a>
+        <div style="float: right; display: block; margin-left: auto; margin-right: 24px;">
+            <a href="index.html" class="btn-text btn-link-font">Home</a>
+            <a href="library.html"class="btn-text btn-link-font">Catalog</a>
+            <a href="about.html" class="btn-text btn-link-font">About</a>
+        </div>
+    </div>
+
+    <div class="btns-top disabled" id="top-btns">
+        <a class="btn btn-return btn-font" href="library.html"><i class="fa fa-angle-left"></i>&nbsp;CATALOG</a>
+        <!-- same as the first item but hidden -->
+        <a class="btn btn-title btn-font" id="page-progress" style="visibility: hidden">&lt; BACK</a>
+    </div>
+
+    <div class="banner aspect-4x3 video">
+        <video autoplay muted loop id="video-atcw">
+            <source src="assets/videos/atcw.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+    </div>
+
+    <div class="parallax-solid aspect-4x3">
+        <div class="video-controls" id="video-atcw-controls">
+            <button id="video-atcw-control-play" class="btn-icon-alt disabled" onclick='updateVideo(this, "video-atcw", "play")'><i class="fa fa-play-circle"></i></button>
+            <button id="video-atcw-control-pause" class="btn-icon-alt" onclick='updateVideo(this, "video-atcw", "pause")'><i class="fa fa-pause-circle"></i></button>
+            <button id="video-atcw-control-unmute" class="btn-icon-alt" onclick='updateVideo(this, "video-atcw", "unmute")'><i class="fa fa-volume-off"></i></button>
+            <button id="video-atcw-control-mute" class="btn-icon-alt disabled" onclick='updateVideo(this, "video-atcw", "mute")'><i class="fa fa-volume-up"></i></button>
+        </div>
+
+        <div class="empty-space-x1"></div>
+
+        <div class="content-grid">
+            <div style="display: inline-block; justify-self: start">
+                <h1>A Town Called Woods</h1>
+                <br><br>
+                <p class="subtitle" style="color: #ffcc00">3D • Render • Blender</p>
+            </div>
+            <div class="text-box contained body-font scroll-reveal">
+                <p>
+                    A Town Called Woods is about a seemingly ordinary but mysterious town surrounded by forests in the middle of nowhere. From the surface, it looks like just another average, peaceful town, but there is always something lurking in the shadows...
+                    <br><br>
+                    Inspired by Simon Stålenhag's work, these renders aim to capture the mundaneness of realism and the fantasy of surreal strcutures.
+                </p>
+            </div>
+        </div>
+
+        <div class="empty-space-x1"></div>
+
+        <!-- Gallery starts here -->
+        <div class="gallery" id="gallery-playerfeedback" onmouseover='galleryMouseOver(true)' onmouseleave='galleryMouseOver(false)'>
+            <div class="image">
+                <p class="caption">Signal</p>
+                <img src="assets/images/atcw_signal.webp">
+            </div>
+            <div class="image">
+                <p class="caption">Power - Night</p>
+                <img src="assets/images/atcw_power_night.webp">
+            </div>
+            <div class="image">
+                <p class="caption">Power - Day</p>
+                <img src="assets/images/atcw_power_day.webp">
+            </div>
+        </div>
+
+        <div class="gallery-indicators" id="gallery-playerfeedback-indicators">
+        </div>
+
+        <div class="gallery-controls">
+            <div>
+                <button class="btn-gallery-prev" onclick='updateGallery("gallery-playerfeedback", -1)'><i class="fa fa-chevron-circle-left"></i></button>
+                <button class="btn-gallery-next" onclick='updateGallery("gallery-playerfeedback", 1)'><i class="fa fa-chevron-circle-right"></i></button>
+            </div>
+        </div>
+        <!-- Gallery ends here -->
+
+        <div class="empty-space-x1"></div>
+
+        <button class="btn btn-font" id="btn-gotop" title="Go to top" onclick="goToTop()"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+
+        <!-- footer -->
+        <div class="v-container" style="width: 100%">
+            <div class="quick-link-container">
+                <!--<a class="btn btn-font" href="proj_g_rhizome.html"><i class="fa fa-arrow-circle-left"></i>&nbsp;PROJECT RHIZOME</a>-->
+                <a class="btn btn-font" href="proj_g_crimson.html"><i class="fa fa-arrow-circle-left"></i>&nbsp;PROJECT CRIMSON</a>
+                <a class="btn btn-font" href="proj_gallery.html">GALLERY&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+
+            <div class="footnote">
+                <div>
+                    <p>This project was made in Blender with Adobe Photoshop. April, 2022.</p>
+                </div>
+            </div>
+
+            <footer style="left: 0; bottom: 0">
+                <div class="h-container" style="float: left; margin-right: auto; margin-left: 32px;">
+                    <img class="logo" src="assets/images/logo.png">
+                    <p class="footer-font">© YICHEN WANG<br><span class="footer-font-alt">yich.w2025@gmail.com<span></p>
+                </div>
+                <div class="h-container" style="float: right; margin-left: auto; margin-right: 32px">
+                    <a class="btn btn-font" href="https://tony-lindorock.itch.io/" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer">itch.io</a>
+                    <a class="btn-icon shape" href="https://linkedin.com/in/yichen-wang-63a965241" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a class="btn-icon" href="https://github.com/tonylindorock" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i></a>
+                </div>
+            </footer>
+        </div>
+</body>
+
+</html>
