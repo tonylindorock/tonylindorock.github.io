@@ -3,15 +3,13 @@
     position: relative;
     display: block;
     overflow: hidden;
-    
     border-radius: 24px;
 
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
 }
 
-.image.single {
+.image.rect {
     width: calc(100% - 32px);
-    margin: 16px;
 }
 
 .image.square {
@@ -19,11 +17,12 @@
     margin: 0 auto;
 }
 
-.image>img {
+.image img {
+    object-fit: cover;
     width: 100%;
 }
 
-.image>p.caption {
+div>p.caption {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -33,7 +32,6 @@
 
     border-radius: 16px;
 
-    background: #262626;
     background: rgba(0, 0, 0, 0.5);
     color: #eee;
 
@@ -42,15 +40,13 @@
     text-align: left;
 
     opacity: 0;
+    transform: scale(0);
     transition: all 0.3s;
 }
 
-.image:hover>p.caption {
+div:hover>p.caption {
     opacity: 1;
-}
-
-img.proj-title {
-    margin-bottom: 0;
+    transform: scale(1);
 }
 
 
@@ -74,8 +70,52 @@ img.proj-title {
 
 .btn-return {}
 
-.btn-title {
-    text-transform: uppercase;
+.btn-title {}
+
+.video-controls{
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+    padding: 16px 0;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.btn-icon-alt{
+    display: block;
+
+    min-width: 64px;
+    margin: 0 8px;
+    opacity: 1;
+
+    color: #eee;
+    font-size: 32px;
+    text-align: center;
+
+    transition: 0.3s ease;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+.btn-icon-alt:hover,
+.btn-icon-alt:hover {
+    transform: scale(1.2);
+}
+
+.btn-icon-alt:active,
+.btn-icon-alt:active {
+    transform: scale(1);
+}
+
+.btn-icon-alt.disabled,
+.btn-icon-alt.disabled {
+    display: none;
 }
 
 
@@ -94,7 +134,7 @@ img.proj-title {
 .content-bg {
     width: 100%;
 
-    padding: 96px 0;
+    padding: 16px 0;
 }
 
 .gallery {
@@ -159,7 +199,7 @@ img.proj-title {
     justify-content: flex-end;
 
     width: 80%;
-    padding: 0 calc(50% - 480px);
+    padding: 0 32px;
     margin: 8px auto;
 
     -webkit-touch-callout: none;
@@ -183,10 +223,10 @@ img.proj-title {
 
 .indicator {
     cursor: pointer;
-    height: 12px;
-    width: 12px;
+    height: 10px;
+    width: 10px;
 
-    background-color: #aaa;
+    background-color: #bbb;
     border-radius: 32px;
 
     margin: 4px;
@@ -201,7 +241,7 @@ img.proj-title {
 }
 
 .indicator.active {
-    width: 24px;
+    width: 20px;
     background-color: #ffcc00;
 }
 
@@ -218,7 +258,7 @@ img.proj-title {
     display: inline-block;
 
     padding: 2px;
-    opacity: 1;
+    color: #bbb;
 
     font-size: 48px;
     text-align: center;
@@ -239,63 +279,13 @@ img.proj-title {
     transform: scale(1);
 }
 
-.btn-gallery-prev.disabled,
-.btn-gallery-next.disabled {
-    opacity: 0.1;
-}
-
-.video-controls{
-    display: flex;
-    justify-content: center;
-
-    width: 100%;
-    margin: 32px 0;
-
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-.btn-icon-alt{
-    display: block;
-
-    min-width: 64px;
-    margin: 0 16px;
-    opacity: 1;
-
-    color: #eee;
-    font-size: 48px;
-    text-align: center;
-
-    transition: 0.3s ease;
-
-    cursor: pointer;
-    user-select: none;
-}
-
-.btn-icon-alt:hover,
-.btn-icon-alt:hover {
-    transform: scale(1.2);
-}
-
-.btn-icon-alt:active,
-.btn-icon-alt:active {
-    transform: scale(1);
-}
-
-.btn-icon-alt.disabled,
-.btn-icon-alt.disabled {
-    display: none;
-}
 
 /**************** Reusable ****************/
 .quick-link-container {
     display: flex;
     justify-content: space-between;
     margin: 0 64px;
-    margin-bottom: 32px;
+    margin-bottom: 64px;
 }
 
 .dropdown {
@@ -311,8 +301,9 @@ img.proj-title {
     background-color: #fff;
     border-radius: 24px;
 
+    min-width: 100%;
     max-width: 75vw;
-    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.2);
 
     z-index: 9;
     overflow: hidden;
@@ -325,7 +316,7 @@ img.proj-title {
     -moz-transition: all 0.3s;
 }
 
-.dropdown-content button{
+.dropdown-content button {
     display: block;
     width: calc(100% - 16px);
     white-space: nowrap;
@@ -341,15 +332,8 @@ img.proj-title {
     font-size: inherit;
     text-decoration: none;
     text-transform: uppercase;
+
     text-align: left;
-
-    transition: 0.1s;
-
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .dropdown-content button:hover {
@@ -364,22 +348,14 @@ img.proj-title {
 /**************** Small Screen Support ****************/
 @media only screen and (max-width: 1000px) {
     .image {
-        border-radius: 8px;
+        border-radius: 16px;
     }
 
-    .image.single {
-        width: 100%;
-        margin: 0;
-        border-radius: 0;
+    .image.square{
+        width: calc(100% - 32px);
     }
 
-    .image.square {
-        width: 100%;
-        margin: 0;
-        border-radius: 0;
-    }
-
-    .image>p.caption {
+    .image p.caption {
         width: 100%;
 
         margin: 0;
@@ -392,6 +368,11 @@ img.proj-title {
         transform: scale(1);
     }
 
+    .btns-top {
+        top: 8px;
+        padding: 24px 32px;
+    }
+
     .content-grid {
         padding: 0 32px;
         gap: 64px;
@@ -400,7 +381,7 @@ img.proj-title {
     }
 
     .gallery {
-        padding: 8px;
+        padding: 16px;
     }
 
     .gallery.portrait {
@@ -408,7 +389,7 @@ img.proj-title {
     }
 
     .gallery>* {
-        margin-right: 8px;
+        margin-right: 16px;
     }
 
     .gallery.portrait>img {
@@ -426,13 +407,6 @@ img.proj-title {
     .gallery-controls.portrait {
         width: 100%;
     }
-    
-    
-    /**************** Interactive ****************/
-    .btns-top {
-        top: 8px;
-        padding: 8px 16px;
-    }
 
     .btn-gallery-prev,
     .btn-gallery-next {
@@ -445,14 +419,6 @@ img.proj-title {
         gap: 16px;
         justify-content: center;
         text-align: center;
-    }
-
-    .btn-return>span {
-        display: none;
-    }
-
-    .btns-top>#empty{
-        display: none;
     }
 }
 

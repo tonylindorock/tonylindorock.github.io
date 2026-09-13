@@ -1,6 +1,5 @@
 "use strict"
 
-
 function onProjBtnEntered(e){
     var vid = e.children[0];
     if (vid.tagName === "VIDEO"){

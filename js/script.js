@@ -14,14 +14,6 @@ function scrollToElement(id) {
   element.scrollIntoView();
 }
 
-function openNavMenu(id){
-  if (id === 1){
-    document.getElementById("nav-menu").style.height = "100%";
-  }else{
-    document.getElementById("nav-menu").style.height = "0";
-  }
-}
-
 function isInViewport(element) {
   var top = element.offsetTop;
   var left = element.offsetLeft;

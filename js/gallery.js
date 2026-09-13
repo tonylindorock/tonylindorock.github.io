@@ -17,9 +17,38 @@ window.onbeforeunload = function() {
 };
 
 $(document).ready(function(){
+    // Get all the galleries
     var galleries = document.getElementsByClassName("gallery");
     for(let i = 0; i < galleries.length; i++){
-        galleries[i].scrollTo(0, 0);
+        // Connect events
+        galleries[i].onscroll = function(){
+            galleryScrolled(galleries[i])
+        }
+
+        var indicator_container = document.getElementById(galleries[i].id + "-indicators");
+        
+        for(let j = 0; j < galleries[i].children.length; j++){
+            // Add click event to images
+            galleries[i].children[j].onclick = function(){
+                indicatorClicked(galleries[i].id, j)
+            }
+
+            // Create indicators
+            const indicator = document.createElement("a");
+            indicator.classList.add("indicator");
+            if (j === 0){
+                indicator.classList.add("active");
+            }
+            indicator.onclick = function(){
+                indicatorClicked(galleries[i].id, j)
+            }
+            if (indicator_container){
+                indicator_container.append(indicator)
+            }
+        }
+
+        //galleries[i].scroll(0, 0);
+        updateScroll(galleries[i], 0);
     }   
 });
 
@@ -46,17 +75,23 @@ function updateGallery(id, dir) {
 
     updateIndicators(id, dir);
     updateScroll(gallery, gallery.scrollLeft + dir * getScrollRatio(gallery));
-    updateButtons(id);
+    //updateButtons(id);
 }
 
 function updateIndicators(id, dir){
     var indicators = document.getElementById(id + "-indicators");
-    
-    var current = getCurrentIndex(indicators);
+    let currentId = 0;
 
-    if (current + dir < indicators.childElementCount && current + dir >= 0){
-        indicators.children[current].classList.remove("active");
-        indicators.children[current + dir].classList.add("active");
+    for(let i = 0; i < indicators.childElementCount; i++){
+        if (indicators.children[i].classList.contains("active")){
+            currentId = i;
+            break;
+        }
+    }
+
+    if (currentId + dir < indicators.childElementCount && currentId + dir >= 0){
+        indicators.children[currentId].classList.remove("active");
+        indicators.children[currentId + dir].classList.add("active");
     }
 }
 
@@ -66,7 +101,6 @@ function indicatorClicked(id, index){
 
     updateGalleryIndicator(indicators, index);
     updateScroll(gallery, index * getScrollRatio(gallery));
-    updateButtons(id);
 }
 
 // update gallery when indicators clicked
@@ -100,7 +134,6 @@ function galleryScrolled(e){
     }
 
    updateGalleryIndicator(indicators, index);
-   updateButtons(e.id);
 }
 
 function galleryMouseOver(state){
@@ -117,17 +150,6 @@ function getImageIndex(currentPos, ratio){
         id += 1;
     }
     return id;
-}
-
-function getCurrentIndex(indicators){
-    let currentId = 0;
-
-    for(let i = 0; i < indicators.childElementCount; i++){
-        if (indicators.children[i].classList.contains("active")){
-            currentId = i;
-            return currentId;
-        }
-    }
 }
 
 function updateButtons(id){

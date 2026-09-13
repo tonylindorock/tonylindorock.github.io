@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<!-- HEAD -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="strict-origin">
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" onerror="onErrorLoader(this, 'assets/font-awesome-4.7.0/css/font-awesome.min.css')">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" onerror="onErrorLoader(this, 'js/jquery-4.0.0.min.js')"></script>
+    <script src="js/script_inventory.js"></script>
+    <script src="js/script.js"></script>
+
+    <link rel="icon" href="favicon.png">
+    <title>Games • Yichen Wang</title>
+</head>
+
+<!-- BODY -->
+
+<body>
+    <div class="nav-bar" style="position: fixed; left: 0; top: 0;">
+        <a class="nav-bar-title">YICHEN WANG</a>
+        <div style="float: right; display: block; margin-left: auto; margin-right: 24px;">
+            <a href="index.html" class="btn-text btn-link-font">Home</a>
+            <a href="library.html"class="btn-text btn-link-font current">Catalog</a>
+            <a href="about.html" class="btn-text btn-link-font">About</a>
+        </div>
+    </div>
+
+    <!--<div class="banner">
+        <div class="float-center">
+            <h1 class="center-text">Games<br>Game Design<br>Level Design<br>Programming</h1>
+        </div>
+        <img class="banner" src="assets/images/oblivion_cover.jpg">
+    </div>-->
+
+    <div>
+        <div class="empty-space-x1 constant"></div>
+        
+        <h1 class="category-container">Released Games</h1>
+        <div class="grid-container">
+            <a class="btn-proj anim-fade-on-load" href="https://tony-lindorock.itch.io/prey" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer">
+                <img class="media-preview" src="assets/images/prey_ss.webp">
+                <img src="assets/images/prey_cover.webp">
+                <div>
+                    <p class="title">Prey&nbsp;&nbsp;<i class="fa fa-external-link" style="font-size: 50%;" aria-hidden="true"></i></p>
+                    <p class="des">Prototype - itch.io</p>
+                </div>
+            </a>
+            <a class="btn-proj anim-fade-on-load" href="https://tony-lindorock.itch.io/oblivion" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer" style="animation-delay: 0.1s;">
+                <img class="media-preview" src="assets/images/oblivion_ss.webp">
+                <img src="assets/images/oblivion_cover.webp">
+                <div>
+                    <p class="title">Oblivion&nbsp;&nbsp;<i class="fa fa-external-link" style="font-size: 50%;" aria-hidden="true"></i></p>
+                    <p class="des">Prototype - itch.io</p>
+                </div>
+            </a>
+            <a class="btn-proj outline anim-fade-on-load" href="https://tony-lindorock.itch.io/into-the-web-browser" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer" style="animation-delay: 0.2s;">
+                <img class="media-preview" src="assets/images/itw_ss.webp">
+                <img src="assets/images/itw_cover.webp">
+                <div>
+                    <p class="title">Into The Web&nbsp;&nbsp;<i class="fa fa-external-link" style="font-size: 50%;" aria-hidden="true"></i></p>
+                    <p class="des">Short game - itch.io</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="empty-space-x05"></div>
+
+         <div class="h-container">
+            <a class="btn btn-font" style="margin: 0 auto; padding-left: 48px; padding-right: 48px" href="https://tony-lindorock.itch.io/" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer">SEE MORE ON itch.io</a>
+        </div>
+
+        <div class="empty-space-x1"></div>
+        
+        <h1 class="category-container">Current Projects</h1>
+        <div class="grid-container">
+            <a class="btn-proj anim-fade-on-load" href="proj_g_crimson.html" style="animation-delay: 0.4s;">
+                <img class="media-preview" src="assets/images/proj_crimson/crimson_ss_fps.webp">
+                <img src="assets/images/proj_crimson/crimson_env_concept.webp">
+                <div>
+                    <p class="title">Project Crimson</p>
+                    <p class="des">Game • Concept • Aessts • Levels</p>
+                </div>
+            </a>
+            <!--<a class="btn-proj anim-fade-on-load" href="proj_g_rhizome.html" style="animation-delay: 0.3s;">
+                <img class="media-preview" src="assets/images/proj_rhizome/rhizome_ss_street.webp">
+                <img src="assets/images/proj_rhizome/rhizome_lv_hospital_old.webp">
+                <div>
+                    <p class="title">Project Rhizome</p>
+                    <p class="des">Game • Assets • Environment</p>
+                </div>
+            </a>-->
+        </div>
+
+        <div class="empty-space-x1"></div>
+
+        <h1 class="category-container">3D Rendering</h1>
+        <div class="grid-container">
+            <a class="btn-proj anim-fade-on-load" href="proj_3d_atcw.html" onmouseover="onProjBtnEntered(this)" onmouseout="onProjBtnExited(this)" style="animation-delay: 0.5s;">
+                <video muted loop class="media-preview">
+                    <source src="assets/videos/atcw.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="assets/images/atcw_signal.webp">
+                <div>
+                    <p class="title">A Town Called Woods</p>
+                    <p class="des">3D Render • Blender</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="empty-space-x1"></div>
+        
+        <h1 class="category-container">Miscellaneous</h1>
+        <div class="grid-container">
+            <a class="btn-proj anim-fade-on-load" href="proj_gallery.html" style="animation-delay: 0.6s;">
+                <img class="media-preview" src="assets/images/misc/character_butcher.webp">
+                <img src="assets/images/misc/awitw_lv.webp">
+                <div>
+                    <p class="title">Gallery</p>
+                    <p class="des"></p>
+                </div>
+            </a>
+        </div>
+
+        <div class="empty-space-x1"></div>
+        
+        <h1 class="category-container">Music</h1>
+        <div class="grid-container">
+            <div class="btn-proj"><iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay; encrypted-media" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/soundcloud%3Aplaylists%3A2064379434%3Fsecret_token%3Ds-dZHatZAnucX&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/tony-lindorock" title="Tony LindoRock" target="_blank" style="color: #cccccc; text-decoration: none;">Tony LindoRock</a> · <a href="https://soundcloud.com/tony-lindorock/sets/project-crimson/s-dZHatZAnucX" title="Project Crimson" target="_blank" style="color: #cccccc; text-decoration: none;">Project Crimson</a></div></div>
+        </div>
+
+        <div class="empty-space-x2"></div>
+
+        <!-- footer -->
+        <!--<div class="footnote">
+            <p>Some games are also available on GitHub.</p>
+        </div>-->
+
+        <footer style="left: 0; bottom: 0">
+            <div class="h-container" style="float: left; margin-right: auto; margin-left: 32px;">
+                <img class="logo" src="assets/images/logo.png">
+                <p class="footer-font">© YICHEN WANG<br><span class="footer-font-alt">yich.w2025@gmail.com<span></p>
+            </div>
+            <div class="h-container" style="float: right; margin-left: auto; margin-right: 32px;">
+                <a class="btn btn-font" href="https://tony-lindorock.itch.io/" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer">itch.io</a>
+                <a class="btn-icon shape" href="https://linkedin.com/in/yichen-wang-63a965241" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                <a class="btn-icon" href="https://github.com/tonylindorock" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i></a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

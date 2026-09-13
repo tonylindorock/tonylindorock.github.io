@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<!-- HEAD -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="strict-origin">
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" onerror="onErrorLoader(this, 'assets/font-awesome-4.7.0/css/font-awesome.min.css')">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_proj.css">
+    <link rel="stylesheet" href="css/style_gallery_wall.css">
+
+    <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" onerror="onErrorLoader(this, 'js/jquery-4.0.0.min.js')"></script>
+    <script src="js/parallax_banner.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/script_proj.js"></script>
+
+
+    <link rel="icon" href="favicon.png">
+    <title>Project Crimson</title>
+</head>
+
+<!-- BODY -->
+
+<body>
+    <div class="nav-bar" style="position: absolute; left: 0; top: 0">
+        <a class="nav-bar-title">YICHEN WANG</a>
+        <div style="float: right; display: block; margin-left: auto; margin-right: 24px;">
+            <a href="index.html" class="btn-text btn-link-font">Home</a>
+            <a href="library.html"class="btn-text btn-link-font">Catalog</a>
+            <a href="about.html" class="btn-text btn-link-font">About</a>
+        </div>
+    </div>
+
+    <div class="btns-top disabled" id="top-btns">
+        <a class="btn btn-return btn-font" href="library.html"><i class="fa fa-angle-left"></i>&nbsp;CATALOG</a>
+        <!--<div class="dropdown">
+            <button class="btn btn-title btn-font" id="page-progress" onclick='toggleDropdown()'>Project Crimson</button>
+            <div class="dropdown-content disabled" id="dropdown-menu">
+                <button onclick='scrollToElement("s1")'>Title&nbsp;<i class="fa fa-angle-right"></i></button>
+                <button onclick='scrollToElement("s2")'>Assets&nbsp;<i class="fa fa-angle-right"></i></button>
+                <button onclick='scrollToElement("s3")'>Levels&nbsp;<i class="fa fa-angle-right"></i></button>
+            </div>
+        </div>-->
+        <!-- same as the first item but hidden -->
+        <a class="btn btn-title btn-font" id="page-progress" style="visibility: hidden">&lt; BACK</a>
+    </div>
+
+    <div class="banner">
+        <img src="assets/images/proj_crimson/crimson_env_concept.webp">
+    </div>
+
+    <div class="parallax-solid">
+
+        <div id="s1" class="empty-space-x1"></div>
+
+        <div class="content-grid">
+            <div style="display: inline-block; justify-self: start">
+                <h1 style=" line-height: 0.9;">Project<br><span style="color: #ff3c3c">Crimson</span></h1>
+                <br>
+                <p class="subtitle" style="color: #888">Assets • Levels • Concept</p>
+            </div>
+            <div class="text-box contained body-font scroll-reveal">
+                <p>
+                    Project Crimson is a concept for a stylized, retro survival horror FPS. Inspired by liminal space and brutalism, this game explores the desperation and fear of being lone.
+                    <br><br>
+                    It is set in a North American / Nordic suburban town in the retro-futuristic 1980s. The town is known as Woods<a class="font-superscript" onclick="goToBottom()">1</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="empty-space-x1"></div>
+
+        <div class="content-bg" style="background-color: #111; color: #eee;">
+
+            <div class="empty-space-x1"></div>
+
+            <!-- Gallery starts here -->
+            <div class="gallery" id="gallery-playerfeedback" onmouseover='galleryMouseOver(true)' onmouseleave='galleryMouseOver(false)'>
+                <div class="image rect">
+                    <p class="caption">Character Concept 1</p>
+                    <img src="assets/images/proj_crimson/hugo.webp">
+                </div>
+                <div class="image rect">
+                    <p class="caption">Character Concept 2</p>
+                    <img src="assets/images/proj_crimson/hugo_alt.webp">
+                </div>
+                <div class="image rect">
+                    <p class="caption">Character Concept 3</p>
+                    <img src="assets/images/proj_crimson/ian.webp">
+                </div>
+                <div class="image rect">
+                    <p class="caption">Enemy Concept 1</p>
+                    <img src="assets/images/proj_crimson/crimson_sloth.webp">
+                </div>
+                <div class="image rect">
+                    <p class="caption">Enemy Concept 2</p>
+                    <img src="assets/images/proj_crimson/crimson_greed.webp">
+                </div>
+                <div class="image rect">
+                    <p class="caption">Enemy Concept 3</p>
+                    <img src="assets/images/proj_crimson/crimson_pride.webp">
+                </div>
+                <div class="image rect">
+                    <p class="caption">Enemy Concept 3</p>
+                    <img src="assets/images/proj_crimson/crimson_wrath.webp">
+                </div>
+                <div class="image rect">
+                    <p class="caption">Enemy Concept 4</p>
+                    <img src="assets/images/proj_crimson/crimson_uncommon.webp">
+                </div>
+            </div>
+
+            <div class="gallery-indicators" id="gallery-playerfeedback-indicators"></div>
+
+            <div class="gallery-controls">
+                <div id="gallery-playerfeedback-controls">
+                    <button  style="color: #aaa" class="btn-gallery-prev" onclick='updateGallery("gallery-playerfeedback", -1)'><i class="fa fa-chevron-circle-left"></i></button>
+                    <button  style="color: #aaa" class="btn-gallery-next" onclick='updateGallery("gallery-playerfeedback", 1)'><i class="fa fa-chevron-circle-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Gallery ends here -->
+
+        <div id="s2" class="empty-space-x1"></div>
+
+        <div class="content-grid">
+            <div class="v-container" style="justify-self: start">
+                <h2>Assets</h2>
+                <div class="text-box contained body-font">
+                    <p>
+                        Some weapons and ammo boxes. Modelled and unwrapped in Blender. Textures were hand-painted in Photoshop.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="empty-space-x1"></div>
+
+
+        <div class="gallery-wall">
+            <div class="gallery-wall-column">
+                <img style="width: 60%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_melee_hh_hammer.webp">
+                <img style="width: 75%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_melee_mech_wrench_pipe.webp">
+                <img src="assets/images/proj_crimson/icon_item_weap_melee_forest_axe.webp">
+                <img src="assets/images/proj_crimson/icon_item_weap_melee_forest_chainsaw.webp">
+            </div>
+            <div class="gallery-wall-column">
+                <img style="width: 60%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_gun_pistol.webp">
+                <img src="assets/images/proj_crimson/icon_item_weap_gun_revolver.webp">
+                <img style="width: 60%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_gun_pistol_m.webp">
+                <img src="assets/images/proj_crimson/icon_item_weap_gun_shotgun_pump.webp">
+            </div>
+            <div class="gallery-wall-column">
+                <img src="assets/images/proj_crimson/icon_item_weap_gun_rifle_assault.webp">
+                <img src="assets/images/proj_crimson/icon_item_weap_gun_rifle_sniper.webp">
+                <img src="assets/images/proj_crimson/icon_item_weap_gun_s_lmg.webp">
+                <img src="assets/images/proj_crimson/icon_item_weap_gun_s_bow.webp">
+            </div>
+            <div class="gallery-wall-column">
+                <img src="assets/images/proj_crimson/icon_item_ammo_308win_wide.webp">
+                <img src="assets/images/proj_crimson/icon_item_ammo_arrowBox.webp">
+                <img style="width: 50%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_ammo_44mag.webp">
+                <img style="width: 75%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_throw_molotov.webp">
+            </div>
+        </div>
+
+        <div id="s3" class="empty-space-x1"></div>
+
+        <div class="content-grid">
+            <div class="v-container" style="justify-self: start">
+                <h2>Levels</h2>
+                <div class="text-box contained body-font">
+                    <p>
+                        Some unfinished levels captured in Godot.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="empty-space-x1"></div>
+
+        <div class="gallery-wall">
+            <div class="gallery-wall-column">
+                <img src="assets/images/proj_crimson/crimson_ss_tower.webp">
+                <img src="assets/images/proj_crimson/crimson_ss_park_start.webp">
+                <img src="assets/images/proj_crimson/crimson_ss_park_old.webp">
+            </div>
+            <div class="gallery-wall-column">
+                <img src="assets/images/proj_crimson/crimson_ss_park.webp">
+                <img src="assets/images/proj_crimson/crimson_ss_fps.webp">
+                
+                <img src="assets/images/proj_crimson/crimson_ss_tower_int.webp">
+                
+            </div>
+            <div class="gallery-wall-column">
+                <img src="assets/images/proj_crimson/crimson_ss_road.webp">
+                <img src="assets/images/proj_crimson/crimson_ss_road_tunnel.webp">
+                
+                <img src="assets/images/proj_crimson/crimson_ss_church.webp">
+            </div>
+            <div class="gallery-wall-column">
+                <img src="assets/images/proj_crimson/crimson_ss_road_highway.webp">
+                <img src="assets/images/proj_crimson/crimson_ss_road_motel.webp">
+                
+                <img src="assets/images/proj_crimson/crimson_ss_test_warehouse.webp">
+            </div>
+        </div>
+
+        <button class="btn btn-font" id="btn-gotop" title="Go to top" onclick="goToTop()"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+
+        <!-- footer -->
+        <div class="v-container" style="width: 100%">
+            <div class="quick-link-container">
+                <div></div>
+                <!--<a class="btn btn-font" href="proj_g_rhizome.html">PROJECT RHIZOME&nbsp;<i class="fa fa-arrow-circle-right"></i></a>-->
+                <a class="btn btn-font" href="proj_3d_atcw.html">A TOWN CALLED WOODS&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                <div></div>
+            </div>
+
+            <div class="footnote">
+                <div><p>1.<a href="proj_3d_atcw.html">A Town Called Woods</a>is based on this concept.</p></div>
+                <div><p>This project was made with Godot, Blender, and Photoshop. The concept art and character design were made with Procreate. 2021 - 2024.</p></div>
+            </div>
+
+            <footer style="left: 0; bottom: 0">
+                <div class="h-container" style="float: left; margin-right: auto; margin-left: 32px;">
+                    <img class="logo" src="assets/images/logo.png">
+                    <p class="footer-font">© YICHEN WANG<br><span class="footer-font-alt">yich.w2025@gmail.com<span></p>
+                </div>
+                <div class="h-container" style="float: right; margin-left: auto; margin-right: 32px">
+                    <a class="btn btn-font" href="https://tony-lindorock.itch.io/" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer">itch.io</a>
+                    <a class="btn-icon shape" href="https://linkedin.com/in/yichen-wang-63a965241" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a class="btn-icon" href="https://github.com/tonylindorock" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i></a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

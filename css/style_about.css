@@ -8,7 +8,8 @@
     word-wrap: break-word;
     text-overflow: ellipsis;
 
-    min-height: 100%;
+    height: 100vh;
+    width: 50%;
 
     animation: 1s ease 0.1s 1 scale-in;
     animation-fill-mode: backwards;
@@ -25,9 +26,9 @@
 
 @media only screen and (max-width: 600px) {
     .title-name-container {
-        padding: 32px;
+        padding: 1em;
         display: flex;
-        font-size: 48px;
+        font-size: 4em;
     }
 
     .title-name-container>p {

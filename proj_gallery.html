@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<!-- HEAD -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="strict-origin">
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" onerror="onErrorLoader(this, 'assets/font-awesome-4.7.0/css/font-awesome.min.css')">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_proj.css">
+    <link rel="stylesheet" href="css/style_gallery_wall.css">
+
+    <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" onerror="onErrorLoader(this, 'js/jquery-4.0.0.min.js')"></script>
+    <script src="js/parallax_banner.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/script_proj.js"></script>
+
+
+    <link rel="icon" href="favicon.png">
+    <title>Gallery</title>
+</head>
+
+<!-- BODY -->
+
+<body>
+    <div class="nav-bar" style="position: absolute; left: 0; top: 0">
+        <a class="nav-bar-title">YICHEN WANG</a>
+        <div style="float: right; display: block; margin-left: auto; margin-right: 24px;">
+            <a href="index.html" class="btn-text btn-link-font">Home</a>
+            <a href="library.html"class="btn-text btn-link-font">Catalog</a>
+            <a href="about.html" class="btn-text btn-link-font">About</a>
+        </div>
+    </div>
+
+   <div class="btns-top disabled" id="top-btns">
+        <a class="btn btn-return btn-font" href="library.html"><i class="fa fa-angle-left"></i>&nbsp;CATALOG</a>
+        <div class="dropdown">
+            <button class="btn btn-title btn-font" id="page-progress" onclick='toggleDropdown()'>GALLERY</button>
+            <div class="dropdown-content disabled" id="dropdown-menu">
+                <button onclick='scrollToElement("s1")'>Unwanted&nbsp;<i class="fa fa-angle-right"></i></button>
+                <button onclick='scrollToElement("s2")'>Questionable Logic: Ep 0&nbsp;<i class="fa fa-angle-right"></i></button>
+                <button onclick='scrollToElement("s3")'>UI Work&nbsp;<i class="fa fa-angle-right"></i></button>
+                <button onclick='scrollToElement("s4")'>Fake Movie Posters&nbsp;<i class="fa fa-angle-right"></i></button>
+            </div>
+        </div>
+        <!-- same as the first item but hidden -->
+        <a class="btn btn-title btn-font" style="visibility: hidden">&lt; BACK</a>
+    </div>
+
+    <div>
+        <div id="s1" class="empty-space-x1 constant"></div>
+        
+        <div class="content-grid">
+            <div class="v-container" style="justify-self: start">
+                <div style="display: inline-block; justify-self: start">
+                    <h2 style="line-height: 50%;">Unwanted</h2>
+                    <p class="subtitle" style="color: #ffcc00">Prototype • Concept</p>
+                </div>
+                <div class="text-box contained body-font scroll-reveal">
+                    <p><br>
+                        <spam class="quote">By the year 20XX, the world has been entirely changed by climate change and the depletion of natural resources. Many countries have fallen or shrunken. Outlaws and unspeakable things thrive in the ungoverned regions around the world.</spam>
+                        <br><br>
+                        A stylized, story-driven first-person shooter where the player controls the character Brian exploring the ungoverned region in North America and an abandoned building to look for survivors and defeating cannibals to save his dog Jelly.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="empty-space-x1"></div>
+
+        <div class="gallery-wall">
+            <div class="gallery-wall-column">
+                <img src="assets/images/misc/pistol_render_0.webp">
+            </div>
+            <div class="gallery-wall-column">
+                <img src="assets/images/misc/pistol_render_1.webp">
+            </div>
+            <div class="gallery-wall-column">
+                <img src="assets/images/misc/pistol_render_2.webp">
+            </div>
+            <div class="gallery-wall-column">
+                <img src="assets/images/misc/pistol_render_3.webp">
+            </div>
+        </div>
+    
+        <div class="empty-space-x1"></div>
+
+        <div class="image square">
+            <p class="caption">Unwanted - Level 1 Design</p>
+            <img src="assets/images/misc/awitw_lv.webp">
+        </div>
+
+        <div class="empty-space-x2"></div>
+
+        <!-- Gallery starts here -->
+        <div class="gallery" id="gallery-unwanted" onmouseover='galleryMouseOver(true)' onmouseleave='galleryMouseOver(false)'>
+            <div class="image rect">
+                <p class="caption">Unwanted - Character Concept 1</p>
+                <img src="assets/images/misc/character_hugo.webp">
+            </div>
+            <div class="image rect">
+                <p class="caption">Unwanted - Character Concept 2</p>
+                <img src="assets/images/misc/character_butcher.webp">
+            </div>
+            <div class="image rect">
+                <p class="caption">Unwanted - Character Concept 3</p>
+                <img src="assets/images/misc/character_cannibal.webp">
+            </div>
+            <div class="image rect">
+                <p class="caption">Unwanted - Character Concept 4</p>
+                <img src="assets/images/misc/character_jelly.webp">
+            </div>
+        </div>
+
+        <div class="gallery-indicators" id="gallery-unwanted-indicators"></div>
+
+        <div class="gallery-controls">
+            <div>
+                <button class="btn-gallery-prev" onclick='updateGallery("gallery-unwanted", -1)'><i class="fa fa-chevron-circle-left"></i></button>
+                <button class="btn-gallery-next" onclick='updateGallery("gallery-unwanted", 1)'><i class="fa fa-chevron-circle-right"></i></button>
+            </div>
+        </div>
+        <!-- Gallery ends here -->
+
+        <div class="empty-space-x1"></div>
+
+        <div class="content-bg" style="background-color: #111; color: #eee;">
+            <div id="s2" class="empty-space-x1"></div>
+
+            <div class="content-grid">
+                <div class="filler-space"></div>
+                <div class="v-container" style="justify-self: start">
+                    <div style="display: inline-block; justify-self: start">
+                        <h2>Questionable Logic:<br>Episode Zero</h2>
+                        <p class="subtitle" style="color: #ffcc00">Prototype • Concept</p>
+                    </div>
+                    <div class="text-box contained body-font">
+                        <p><br>
+                            A point-and-click, supernatural puzzle game where you play as Lithia, investigating the old house she once grew up in and discovering the truth of a family tragedy. 
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="empty-space-x1"></div>
+
+            <div class="gallery-wall">
+                <div class="gallery-wall-column">
+                    <img src="assets/images/misc/ql_plot_0.webp">
+                    <img src="assets/images/misc/ql_plot_1.webp">
+                </div>
+                <div class="gallery-wall-column">
+                    <img src="assets/images/misc/ql_plot_2.webp">
+                    <img src="assets/images/misc/ql_plot_3.webp">
+                </div>
+                <div class="gallery-wall-column">
+                    <img src="assets/images/misc/ql_plot_4.webp">
+                    <img src="assets/images/misc/ql_plot_5.webp">
+                </div>
+                <div class="gallery-wall-column">
+                    <img src="assets/images/misc/ql_plot_6.webp">
+                    <img src="assets/images/misc/ql_plot_7.webp">
+                </div>
+            </div>
+
+            <div class="empty-space-x05"></div>
+        </div>
+
+        <div id="s3" class="empty-space-x1"></div>
+
+        <div class="content-grid">
+            <div style="display: inline-block; justify-self: start">
+                <h2>UI Work</h2>
+            </div>
+        </div>
+
+        <div class="empty-space-x1"></div>
+
+        <!-- Gallery starts here -->
+        <div class="gallery" id="gallery-ui" onmouseover='galleryMouseOver(true)' onmouseleave='galleryMouseOver(false)'>
+            <div class="image rect">
+                <p class="caption">Project Crimson - Campaign Menu</p>
+                <img src="assets/images/misc/ui_crimson.webp">
+            </div>
+            <div class="image rect">
+                <p class="caption">Unwanted - Settings Menu</p>
+                <img src="assets/images/misc/ui_ink.webp">
+            </div>
+            <div class="image rect">
+                <p class="caption">Fantasy Operating System</p>
+                <img src="assets/images/misc/ui_os.webp">
+            </div>
+        </div>
+
+        <div class="gallery-indicators" id="gallery-ui-indicators"></div>
+
+        <div class="gallery-controls">
+            <div>
+                <button class="btn-gallery-prev" onclick='updateGallery("gallery-ui", -1)'><i class="fa fa-chevron-circle-left"></i></button>
+                <button class="btn-gallery-next" onclick='updateGallery("gallery-ui", 1)'><i class="fa fa-chevron-circle-right"></i></button>
+            </div>
+        </div>
+        <!-- Gallery ends here -->
+
+        <div class="empty-space-x1"></div>
+
+        <div class="content-bg" style="background-color: #111; color: #eee;">
+            <div id="s4" class="empty-space-x1"></div>
+
+            <div class="content-grid">
+                <div class="filler-space"></div>
+                <div class="v-container" style="justify-self: start">
+                    <h2>Fake Movie Posters</h2>
+                    <div class="text-box contained body-font">
+                        <p><br>
+                            Made with loyalty-free images in Procreate. Inspired by movies and games. Initially designed for<a class="hyperlink" href="proj_g_crimson.html">Project Crimson</a>to be used in-game.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="empty-space-x1"></div>
+
+            <div class="gallery-wall">
+                <div class="gallery-wall-column">
+                    <img src="assets/images/misc/mp_action_0.webp">
+                    <img src="assets/images/misc/mp_scifi_1.webp">
+                    <img src="assets/images/misc/mp_horror_0.webp">
+                    <img src="assets/images/misc/mp_rom_0.webp">
+                </div>
+                <div class="gallery-wall-column">
+                    <img src="assets/images/misc/mp_action_1.webp">
+                    <img src="assets/images/misc/mp_scifi_2.webp">
+                    <img src="assets/images/misc/mp_horror_1.webp">
+                </div>
+                <div class="gallery-wall-column">
+                    <img src="assets/images/misc/mp_action_2.webp">
+                    <img src="assets/images/misc/mp_scifi_4.webp">
+                    <img src="assets/images/misc/mp_horror_2.webp">
+                </div>
+                <div class="gallery-wall-column">
+                    <img src="assets/images/misc/mp_scifi_0.webp">
+                    <img src="assets/images/misc/mp_horror_3.webp">
+                    <img src="assets/images/misc/mp_horror_4.webp">
+                </div>
+            </div>
+        
+            <div class="empty-space-x05"></div>
+        </div>
+
+        <div class="empty-space-x1"></div>
+
+        <button class="btn btn-font" id="btn-gotop" title="Go to top" onclick="goToTop()"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+
+        <!-- footer -->
+        <div class="v-container" style="width: 100%">
+            <div class="quick-link-container">
+                <div></div>
+                <a class="btn btn-font" href="proj_3d_atcw.html"><i class="fa fa-arrow-circle-left"></i>&nbsp;A TOWN CALLED WOODS</a>
+                <div></div>
+            </div>
+
+            <footer style="left: 0; bottom: 0">
+                <div class="h-container" style="float: left; margin-right: auto; margin-left: 32px;">
+                    <img class="logo" src="assets/images/logo.png">
+                    <p class="footer-font">© YICHEN WANG<br><span class="footer-font-alt">yich.w2025@gmail.com<span></p>
+                </div>
+                <div class="h-container" style="float: right; margin-left: auto; margin-right: 32px">
+                    <a class="btn btn-font" href="https://tony-lindorock.itch.io/" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer">itch.io</a>
+                    <a class="btn-icon shape" href="https://linkedin.com/in/yichen-wang-63a965241" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a class="btn-icon" href="https://github.com/tonylindorock" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i></a>
+                </div>
+            </footer>
+        </div>
+</body>
+
+</html>

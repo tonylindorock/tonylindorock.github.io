@@ -5,23 +5,26 @@ const MAX_SCROLL = 70;
 var projTitle;
 var progressLabel;
 
-
 $(document).ready(function () {
-    progressLabel = document.getElementById("page-progress")
-    projTitle = progressLabel.innerHTML;
-
-    setupRevealElements();
+    progressLabel = document.getElementById("page-progress");
+    if (progressLabel) {
+     projTitle = progressLabel.innerHTML;
+    }
+    observeElementVis();
 
     window.onscroll = function () {
         handleBanner();
         windowScrolled();
-        updatePageProgress();
+        if (progressLabel) {
+            updatePageProgress();
+        }
         observeElementVis();
     };
 });
 
 function windowScrolled() {
     var scroll = window.scrollY;
+    //console.log(scroll);
     if (scroll >= MAX_SCROLL) {
         $("#top-btns").removeClass("disabled");
 
@@ -49,31 +52,21 @@ function updatePageProgress() {
     progress = clamp(progress, 0, 100);
     var number = "000";
     if (progress < 10){
-        number = "&nbsp;&nbsp;" + progress;
+        number = "00" + progress;
     }else if(progress < 100){
-        number = "&nbsp;" + progress;
+        number = "0" + progress;
     }else{
         number = progress;
     }
 
     var result = "";
-    result += projTitle + "&nbsp;&nbsp;" + number + "%";
+    result += projTitle + " • " + number + "%";
 
     progressLabel.innerHTML = result;
 }
 
 function clamp(val, min, max) {
     return val > max ? max : val < min ? min : val;
-}
-
-function setupRevealElements(){
-    var elements = document.getElementsByClassName("scroll-reveal");
-    for (var i = 0; i < elements.length; i++) {
-        var e = elements[i];
-        if (isInViewport(e)){
-            reveal(e);
-        }
-    }
 }
 
 function observeElementVis(){

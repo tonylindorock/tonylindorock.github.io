@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <!-- HEAD -->
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" content="strict-origin">
 
   <!-- STYLE -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" onerror="onErrorLoader(this, 'assets/font-awesome-4.7.0/css/font-awesome.min.css')">
   <link rel="stylesheet" href="css/style.css">
 
   <!-- SCRIPTS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" onerror="onErrorLoader(this, 'js/jquery-4.0.0.min.js')"></script>
   <script src="js/script.js"></script>
   <script src="js/script_home.js"></script>
 
@@ -20,71 +19,66 @@
 </head>
 
 <!-- BODY -->
+  <body style="min-height: none; height: 100%">
+    <div class="nav-bar" style="position: fixed; left: 0; top: 0; background: none; backdrop-filter: none; -webkit-backdrop-filter: none;">
+      <a class="nav-bar-title" style="position: fixed;">YICHEN WANG</a>
+      <div style="float: right; display: block; margin-left: auto; margin-right: 24px;">
+        <a href="index.html" class="btn-text btn-link-font current">Home</a>
+        <a href="library.html"class="btn-text btn-link-font">Catalog</a>
+        <!--<a class="btn-text btn-link-font">3D</a>
+        <a class="btn-text btn-link-font">UIX</a>-->
+        <a href="about.html" class="btn-text btn-link-font">About</a>
+      </div>
+    </div>
 
-<body style="min-height: none; height: 100%">
-  <div class="nav-bar" style="position: fixed; left: 0; top: 0; background: none;">
-    <a class="nav-bar-title" style="position: fixed;">YICHEN WANG</a>
-    <div style="float: right; display: block; margin-left: auto;" id="nav-bar-btns">
-      <a href="index.html" class="btn-text btn-link-font current">Home</a>
-      <a href="games.html" class="btn-text btn-link-font">Games</a>
-      <a href="3d.html" class="btn-text btn-link-font">3D</a>
-      <a href="uix.html" class="btn-text btn-link-font">UIX</a>
-      <a href="about.html" class="btn-text btn-link-font">About</a>
-      <a id="nav-menu-btn" href="javascript:void(0);" class="btn-text btn-link-font" onclick="openNavMenu(1)"><i class="fa fa-bars"></i></a>
+    <div class="scroll-snap-container" id="home-content">
+      <div class="scroll-snap-item">
+        <div class="float-center">
+          <h1 style="text-align: left; display: block;" class="anim-scale-out-fade-in">Hello.<br>Portfolio.<br><span><i class="fa fa-angle-down" style="text-align: center; display: block;"></i></span></h1>
+        </div>
+        <!--<img src="assets/images/atcw_signal.webp">-->
+        <video autoplay muted loop style="width: 100%; object-fit: cover;">
+              <source src="assets/videos/atcw.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+          </video>
+      </div>
+      <div class="scroll-snap-item">
+        <div class="float-center">
+          <a class="btn-text-banner" href="https://tony-lindorock.itch.io/prey" rel="noopener noreferrer"><h1>Prey</h1><br><br><h3>Game on itch.io</h2></a>
+        </div>
+        <img src="assets/images/prey_ss.webp">
+      </div>
+      <div class="scroll-snap-item">
+        <div class="float-center">
+          <a class="btn-text-banner" href="proj_g_crimson.html"><h1>Project Crimson</h1></a>
+        </div>
+        <img src="assets/images/proj_crimson/crimson_env_concept.webp">
+      </div>
+      <div class="scroll-snap-item">
+        <div class="float-center">
+          <a class="btn-text-banner" href="proj_gallery.html"><h1>Gallery</h1></a>
+        </div>
+        <img src="assets/images/misc/pistol_render_3.webp">
+      </div>
+      <!--<div class="scroll-snap-item">
+        <div class="float-center">
+          <a class="btn-text-banner" href="proj_g_rhizome.html"><h1>Project Rhizome</h1></a>
+        </div>
+        <img src="assets/images/proj_rhizome/rhizome_lv_school_skybridge.webp">
+      </div>-->
     </div>
-  </div>
-  <!-- The overlay -->
-  <div class="nav-overlay" id="nav-menu">
-    <button href="javascript:void(0)" class="btn-close" onclick="openNavMenu(0)"><i class="fa fa-times-circle"></i></button>
-    <div class="grid-container overlay-btns">
-      <a href="index.html" class="btn-text btn-link-font current">Home</a>
-      <a href="games.html" class="btn-text btn-link-font">Games</a>
-      <a href="3d.html" class="btn-text btn-link-font">3D</a>
-      <a href="uix.html" class="btn-text btn-link-font">UIX</a>
-      <a href="about.html" class="btn-text btn-link-font">About</a>
-    </div>
-  </div>
 
-  <div class="scroll-snap-container" id="home-content">
-    <div class="scroll-snap-item anim-fade-in">
-      <div class="float-center">
-        <h1 class="anim-scale-out-fade-in" style="text-align: left; display: block;">Hello,<br>welcome.<br><span><i class="fa fa-angle-down" style="text-align: center; display: block;"></i></span></h1>
+    <footer style="position: fixed; background: none; left: 0; bottom: 0">
+      <div class="h-container" style="float: left; margin-right: auto; margin-left: 32px;">
+        <img class="logo" src="assets/images/logo.png">
+        <p class="footer-font">© YICHEN WANG<br><span class="footer-font-alt">yich.w2025@gmail.com<span></p>
       </div>
-      <img src="../assets/images/atcw_signal.jpg">
-    </div>
-    <div class="scroll-snap-item">
-      <div class="float-center" style="width: 100%">
-        <a class="btn-text-alt" href="games.html"><h1>Games<br>Game Design<br>Level Design<br>Programming</h1></a>
+      <div class="h-container" style="float: right; margin-left: auto; margin-right: 32px;">
+        <a class="btn btn-font" href="https://tony-lindorock.itch.io/" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer">itch.io</a>
+        <a class="btn-icon shape" href="https://linkedin.com/in/yichen-wang-63a965241" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <a class="btn-icon" href="https://github.com/tonylindorock" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i></a>
       </div>
-      <img src="../assets/images/prey_ss_0.jpg">
-    </div>
-    <div class="scroll-snap-item">
-      <div class="float-center" style="width: 100%">
-        <a class="btn-text-alt" href="3d.html"><h1>3D Production<br>Environment<br>Character<br>Game Assets</h1></a>
-      </div>
-      <img src="../assets/images/hd_frame_0.jpg">
-    </div>
-    <div class="scroll-snap-item">
-      <div class="float-center" style="width: 100%">
-        <a class="btn-text-alt" href="uix.html"><h1>User Interface<br>User Experience<br>App Concept<br></h1></a>
-      </div>
-      <img src="../assets/images/rise_cover.jpg">
-    </div>
-  </div>
-
-  <footer style="position: fixed; background: none; left: 0; bottom: 0">
-    <div class="h-container" style="float: left;">
-      <img class="logo" src="assets/images/logo.png">
-      <div id="footer-info" style="margin-top: auto; margin-bottom: auto;">
-        <p class="footer-font">© YICHEN WANG<br><span class="footer-font-alt">tonylindorock@gmail.com<span></p>
-      </div>
-    </div>
-    <div id="footer-link-btns" class="h-container" style="float: right;">
-      <a class="btn btn-font" href="https://tony-lindorock.itch.io/" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer">itch.io</a>
-      <a class="btn-icon shape" href="https://linkedin.com/in/yichen-wang-63a965241" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-      <a class="btn-icon" href="https://github.com/tonylindorock" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i></a>
-    </div>
-  </footer>
-</body>
+    </footer>
+  </body>
 
 </html>

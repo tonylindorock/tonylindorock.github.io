@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<!-- HEAD -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="strict-origin">
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" onerror="onErrorLoader(this, 'assets/font-awesome-4.7.0/css/font-awesome.min.css')">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style_proj.css">
+    <link rel="stylesheet" href="css/style_gallery_wall.css">
+
+    <!-- SCRIPTS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" onerror="onErrorLoader(this, 'js/jquery-4.0.0.min.js')"></script>
+    <script src="js/parallax_banner.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/script_proj.js"></script>
+
+
+    <link rel="icon" href="favicon.png">
+    <title>Project Rhizome</title>
+</head>
+
+<!-- BODY -->
+
+<body>
+    <div class="nav-bar" style="position: absolute; left: 0; top: 0">
+        <a class="nav-bar-title">YICHEN WANG</a>
+        <div style="float: right; display: block; margin-left: auto; margin-right: 24px;">
+            <a href="index.html" class="btn-text btn-link-font">Home</a>
+            <a href="library.html"class="btn-text btn-link-font">Catalog</a>
+            <a href="about.html" class="btn-text btn-link-font">About</a>
+        </div>
+    </div>
+
+    <div class="btns-top disabled" id="top-btns">
+        <a class="btn btn-return btn-font" href="library.html"><i class="fa fa-angle-left"></i>&nbsp;CATALOG</a>
+        <!--<div class="dropdown">
+            <button class="btn btn-title btn-font" id="page-progress" onclick='toggleDropdown()'>Project Crimson</button>
+            <div class="dropdown-content disabled" id="dropdown-menu">
+                <button onclick='scrollToElement("s1")'>Title&nbsp;<i class="fa fa-angle-right"></i></button>
+                <button onclick='scrollToElement("s2")'>Assets&nbsp;<i class="fa fa-angle-right"></i></button>
+                <button onclick='scrollToElement("s3")'>Levels&nbsp;<i class="fa fa-angle-right"></i></button>
+            </div>
+        </div>-->
+        <!-- same as the first item but hidden -->
+        <a class="btn btn-title btn-font" id="page-progress" style="visibility: hidden">&lt; BACK</a>
+    </div>
+
+    <div class="banner">
+        <img src="assets/images/proj_rhizome/rhizome_lv_school_skybridge.webp">
+    </div>
+
+    <div class="parallax-solid">
+
+        <div id="s1" class="empty-space-x1"></div>
+
+        <div class="content-grid">
+            <div style="display: inline-block; justify-self: start">
+                <h1 style=" line-height: 0.9;">Project<br><span style="color: #ffcc00">Rhizome</span></h1>
+                <br>
+                <p class="subtitle" style="color: #888">Assets • Levels • Concept</p>
+            </div>
+            <div class="text-box contained body-font scroll-reveal">
+                <p>
+                    Working as the artist and a tool programmer in an on-going, 5-person project aiming to develop a 3D top down immersive sim game set in a cyberpunk world.
+                </p>
+            </div>
+        </div>
+
+        <div class="empty-space-x1"></div>
+
+        <div class="content-bg" style="background-color: #111; color: #eee;">
+
+            <div class="empty-space-x1"></div>
+
+            <!-- Gallery starts here -->
+            <div class="gallery" id="gallery-character" onmouseover='galleryMouseOver(true)' onmouseleave='galleryMouseOver(false)'>
+                <div class="image rect">
+                    <p class="caption">Character Concept 1</p>
+                    <img src="assets/images/proj_rhizome/concept_latanya_1.webp">
+                </div>
+                <div class="image rect">
+                    <p class="caption">Character Concept 2</p>
+                    <img src="assets/images/proj_rhizome/concept_squad.webp">
+                </div>
+            </div>
+
+            <div class="gallery-indicators" id="gallery-character-indicators"></div>
+
+            <div class="gallery-controls">
+                <div id="gallery-character-controls">
+                    <button  style="color: #aaa" class="btn-gallery-prev" onclick='updateGallery("gallery-character", -1)'><i class="fa fa-chevron-circle-left"></i></button>
+                    <button  style="color: #aaa" class="btn-gallery-next" onclick='updateGallery("gallery-character", 1)'><i class="fa fa-chevron-circle-right"></i></button>
+                </div>
+            </div>
+        </div>
+        <!-- Gallery ends here -->
+
+        <div id="s2" class="empty-space-x1"></div>
+
+        <div class="content-grid">
+            <div class="v-container" style="justify-self: start">
+                <h2>Assets</h2>
+                <div class="text-box contained body-font">
+                    <p>
+                        Collections of clutter assets used in levels.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="empty-space-x1"></div>
+
+
+        <div class="gallery-wall">
+            <div class="gallery-wall-column">
+                <img style="width: 60%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_melee_hh_hammer.webp">
+                
+            </div>
+            <div class="gallery-wall-column">
+                <img style="width: 60%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_gun_pistol.webp">
+                
+            </div>
+            <div class="gallery-wall-column">
+                <img src="assets/images/proj_crimson/icon_item_weap_gun_rifle_assault.webp">
+               
+            </div>
+            <div class="gallery-wall-column">
+                <img src="assets/images/proj_crimson/icon_item_ammo_308win_wide.webp">
+
+            </div>
+        </div>
+
+        <div id="s3" class="empty-space-x1"></div>
+        
+        <div class="content-bg" style="background-color: #111; color: #eee;">
+            <div class="empty-space-x1"></div>
+
+            <div class="content-grid">
+                <div class="v-container" style="justify-self: start">
+                    <h2>Kits</h2>
+                    <div class="text-box contained body-font">
+                        <p>
+                            Modular assets for making environments and levels.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="empty-space-x1"></div>
+
+            <!-- Gallery starts here -->
+            <div class="gallery" id="gallery-playerfeedback" onmouseover='galleryMouseOver(true)' onmouseleave='galleryMouseOver(false)'>
+                <div class="image rect">
+                    <p class="caption">Character Concept 1</p>
+                    <img src="assets/images/proj_crimson/hugo.webp">
+                </div>
+            </div>
+
+            <div class="gallery-indicators" id="gallery-playerfeedback-indicators"></div>
+
+            <div class="gallery-controls">
+                <div id="gallery-playerfeedback-controls">
+                    <button  style="color: #aaa" class="btn-gallery-prev" onclick='updateGallery("gallery-playerfeedback", -1)'><i class="fa fa-chevron-circle-left"></i></button>
+                    <button  style="color: #aaa" class="btn-gallery-next" onclick='updateGallery("gallery-playerfeedback", 1)'><i class="fa fa-chevron-circle-right"></i></button>
+                </div>
+            </div>
+            <!-- Gallery ends here -->
+        </div>
+
+        <div class="empty-space-x1"></div>
+
+        <div class="content-grid">
+            <div class="v-container" style="justify-self: start">
+                <h2>Levels</h2>
+                <div class="text-box contained body-font">
+                    <p>
+                        A WIP level captured in Godot.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="empty-space-x1"></div>
+
+        <div class="gallery-wall">
+            <div class="gallery-wall-column">
+                <img src="assets/images/proj_crimson/crimson_ss_tower.webp">
+                
+            </div>
+            <div class="gallery-wall-column">
+                <img src="assets/images/proj_crimson/crimson_ss_park.webp">
+               
+            </div>
+            <div class="gallery-wall-column">
+                <img src="assets/images/proj_crimson/crimson_ss_road.webp">
+                
+            </div>
+            <div class="gallery-wall-column">
+                <img src="assets/images/proj_crimson/crimson_ss_road_highway.webp">
+                
+            </div>
+        </div>
+
+        <button class="btn btn-font" id="btn-gotop" title="Go to top" onclick="goToTop()"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+
+        <!-- footer -->
+        <div class="v-container" style="width: 100%">
+            <div class="quick-link-container">
+                <a class="btn btn-font" href="proj_g_crimson.html"><i class="fa fa-arrow-circle-left"></i>&nbsp;PROJECT CRIMSON</a>
+                <a class="btn btn-font" href="proj_3d_atcw.html">A TOWN CALLED WOODS&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+            </div>
+
+            <footer style="left: 0; bottom: 0">
+                <div class="h-container" style="float: left; margin-right: auto; margin-left: 32px;">
+                    <img class="logo" src="assets/images/logo.png">
+                    <p class="footer-font">© YICHEN WANG<br><span class="footer-font-alt">yich.w2025@gmail.com<span></p>
+                </div>
+                <div class="h-container" style="float: right; margin-left: auto; margin-right: 32px">
+                    <a class="btn btn-font" href="https://tony-lindorock.itch.io/" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer">itch.io</a>
+                    <a class="btn-icon shape" href="https://linkedin.com/in/yichen-wang-63a965241" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a class="btn-icon" href="https://github.com/tonylindorock" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i></a>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

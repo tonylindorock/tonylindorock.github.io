@@ -7,42 +7,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- STYLE -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" onerror="onErrorLoader(this, 'assets/font-awesome-4.7.0/css/font-awesome.min.css')">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_about.css">
 
     <!-- SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" onerror="onErrorLoader(this, 'js/jquery-4.0.0.min.js')"></script>
     <script src="js/script.js"></script>
     <script src="js/script_about.js"></script>
 
     <link rel="icon" href="favicon.png">
-    <title>About • Yichen Wang</title>
+    <title>About Me • Yichen Wang</title>
 </head>
 
 <!-- BODY -->
-
 <body>
-    <div class="nav-bar" style="left: 0; top: 0">
+    <div class="nav-bar" style="position: fixed; left: 0; top: 0">
         <a class="nav-bar-title" style="display: none;">YICHEN WANG</a>
-        <div style="float: right; display: block; margin-left: auto;" id="nav-bar-btns">
+        <div style="float: right; display: block; margin-left: auto; margin-right: 24px;">
             <a href="index.html" class="btn-text btn-link-font">Home</a>
-            <a href="games.html" class="btn-text btn-link-font">Games</a>
-            <a href="3d.html" class="btn-text btn-link-font">3D</a>
-            <a href="uix.html" class="btn-text btn-link-font">UIX</a>
-            <a href="about.html" class="btn-text btn-link-font current">About</a>
-            <a id="nav-menu-btn" href="javascript:void(0);" class="btn-text btn-link-font" onclick="openNavMenu(1)"><i class="fa fa-bars"></i></a>
-        </div>
-    </div>
-
-    <!-- The overlay -->
-    <div class="nav-overlay" id="nav-menu">
-        <button href="javascript:void(0)" class="btn-close" onclick="openNavMenu(0)"><i class="fa fa-times-circle"></i></button>
-        <div class="grid-container overlay-btns">
-            <a href="index.html" class="btn-text btn-link-font">Home</a>
-            <a href="games.html" class="btn-text btn-link-font">Games</a>
-            <a href="3d.html" class="btn-text btn-link-font">3D</a>
-            <a href="uix.html" class="btn-text btn-link-font">UIX</a>
+            <a href="library.html"class="btn-text btn-link-font">Catalog</a>
             <a href="about.html" class="btn-text btn-link-font current">About</a>
         </div>
     </div>
@@ -55,7 +39,7 @@
 
     <div class="text-box center body-font">
         <p>
-            Yichen Wang is a digital artist who never stops incorporating sci-fi elements in his works. He uses the power of storytelling to express his hope and concern for the future state of the world.
+            Yichen Wang is a digital artist who never stops incorporating sci-fi elements in his works. He uses the power of storytelling to express his hope and concern for the future state of the world. 
             <br><br>
             Yichen specializes in programming and visual communication in both 2D and 3D. He also has a fascination with world-building and music production. Yichen combines all his skills to materialize an idea in a fully digital environment using contemporary technology and computer software. He believes a story that allows users to interact and experience through visual and audio is far more immersive and personal.
             <br><br>
@@ -65,20 +49,20 @@
 
     <div class="empty-space-x2"></div>
 
+    <button class="btn btn-font" id="btn-gotop" title="Go to top" onclick="goToTop()"><i class="fa fa-chevron-up" aria-hidden="true"></i></button>
+
     <!-- FOOTER -->
     <footer style="left: 0; bottom: 0">
-        <div class="h-container" style="float: left;">
-            <img class="logo" src="assets/images/logo.png">
-            <div id="footer-info" style="margin-top: auto; margin-bottom: auto;">
-                <p class="footer-font">© YICHEN WANG<br><span class="footer-font-alt">tonylindorock@gmail.com<span></p>
-            </div>
+        <div class="h-container" style="float: left; margin-right: auto; margin-left: 32px;">
+          <img class="logo" src="assets/images/logo.png">
+          <p class="footer-font">© YICHEN WANG<br><span class="footer-font-alt">yich.w2025@gmail.com<span></p>
         </div>
-        <div id="footer-link-btns" class="h-container" style="float: right;">
-            <a class="btn btn-font" href="https://tony-lindorock.itch.io/" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer">itch.io</a>
-            <a class="btn-icon shape" href="https://linkedin.com/in/yichen-wang-63a965241" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-            <a class="btn-icon" href="https://github.com/tonylindorock" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i></a>
+        <div class="h-container" style="float: right; margin-left: auto; margin-right: 32px;">
+          <a class="btn btn-font" href="https://tony-lindorock.itch.io/" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer">itch.io</a>
+          <a class="btn-icon shape" href="https://linkedin.com/in/yichen-wang-63a965241" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          <a class="btn-icon" href="https://github.com/tonylindorock" onclick="window.open(this.href,'_blank');return false;" rel="noopener noreferrer"><i class="fa fa-github" aria-hidden="true"></i></a>
         </div>
-    </footer>
+      </footer>
 </body>
 
 </html>
