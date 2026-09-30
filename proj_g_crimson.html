@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" content="strict-origin">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, strict-origin">
 
     <!-- STYLE -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" onerror="onErrorLoader(this, 'assets/font-awesome-4.7.0/css/font-awesome.min.css')">
@@ -13,7 +13,8 @@
     <link rel="stylesheet" href="css/style_gallery_wall.css">
 
     <!-- SCRIPTS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" onerror="onErrorLoader(this, 'js/jquery-4.0.0.min.js')"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" onerror="this.onerror=null;this.href='js/jquery-4.0.0.min.js';"></script>-->
+    <script src="js/jquery-4.0.0.min.js"></script>
     <script src="js/parallax_banner.js"></script>
     <script src="js/gallery.js"></script>
     <script src="js/dropdown.js"></script>
@@ -30,7 +31,7 @@
 <body>
     <div class="nav-bar" style="position: absolute; left: 0; top: 0">
         <a class="nav-bar-title">YICHEN WANG</a>
-        <div style="float: right; display: block; margin-left: auto; margin-right: 24px;">
+        <div style="float: right; display: block; margin-left: auto;">
             <a href="index.html" class="btn-text btn-link-font">Home</a>
             <a href="library.html"class="btn-text btn-link-font">Catalog</a>
             <a href="about.html" class="btn-text btn-link-font">About</a>
@@ -61,9 +62,9 @@
 
         <div class="content-grid">
             <div style="display: inline-block; justify-self: start">
-                <h1 style=" line-height: 0.9;">Project<br><span style="color: #ff3c3c">Crimson</span></h1>
+                <h1 style=" line-height: 0.9;" class="scroll-reveal">Project<br><span style="color: #ff3c3c">Crimson</span></h1>
                 <br>
-                <p class="subtitle" style="color: #888">Assets • Levels • Concept</p>
+                <p class="subtitle scroll-reveal" style="color: #888">Assets • Levels • Concept</p>
             </div>
             <div class="text-box contained body-font scroll-reveal">
                 <p>
@@ -76,7 +77,7 @@
 
         <div class="empty-space-x1"></div>
 
-        <div class="content-bg" style="background-color: #111; color: #eee;">
+        <div class="content-bg scroll-reveal" style="background-color: #111; color: #eee;">
 
             <div class="empty-space-x1"></div>
 
@@ -130,13 +131,16 @@
         <div id="s2" class="empty-space-x1"></div>
 
         <div class="content-grid">
-            <div class="v-container" style="justify-self: start">
+            <div class="v-container scroll-reveal" style="justify-self: start">
                 <h2>Assets</h2>
                 <div class="text-box contained body-font">
                     <p>
-                        Some weapons and ammo boxes. Modelled and unwrapped in Blender. Textures were hand-painted in Photoshop.
+                        Some weapons and ammo boxes. 
                     </p>
                 </div>
+            </div>
+            <div class="text-box contained body-font quote scroll-reveal">
+                <p>Modelled and unwrapped in Blender. Textures were hand-painted in Photoshop.</p>
             </div>
         </div>
 
@@ -145,35 +149,35 @@
 
         <div class="gallery-wall">
             <div class="gallery-wall-column">
-                <img style="width: 60%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_melee_hh_hammer.webp">
-                <img style="width: 75%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_melee_mech_wrench_pipe.webp">
-                <img src="assets/images/proj_crimson/icon_item_weap_melee_forest_axe.webp">
-                <img src="assets/images/proj_crimson/icon_item_weap_melee_forest_chainsaw.webp">
+                <img class="scroll-reveal" style="width: 60%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_melee_hh_hammer.webp">
+                <img class="scroll-reveal" style="width: 75%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_melee_mech_wrench_pipe.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/icon_item_weap_melee_forest_axe.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/icon_item_weap_melee_forest_chainsaw.webp">
             </div>
             <div class="gallery-wall-column">
-                <img style="width: 60%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_gun_pistol.webp">
-                <img src="assets/images/proj_crimson/icon_item_weap_gun_revolver.webp">
-                <img style="width: 60%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_gun_pistol_m.webp">
-                <img src="assets/images/proj_crimson/icon_item_weap_gun_shotgun_pump.webp">
+                <img class="scroll-reveal" style="width: 60%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_gun_pistol.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/icon_item_weap_gun_revolver.webp">
+                <img class="scroll-reveal" style="width: 60%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_weap_gun_pistol_m.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/icon_item_weap_gun_shotgun_pump.webp">
             </div>
             <div class="gallery-wall-column">
-                <img src="assets/images/proj_crimson/icon_item_weap_gun_rifle_assault.webp">
-                <img src="assets/images/proj_crimson/icon_item_weap_gun_rifle_sniper.webp">
-                <img src="assets/images/proj_crimson/icon_item_weap_gun_s_lmg.webp">
-                <img src="assets/images/proj_crimson/icon_item_weap_gun_s_bow.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/icon_item_weap_gun_rifle_assault.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/icon_item_weap_gun_rifle_sniper.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/icon_item_weap_gun_s_lmg.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/icon_item_weap_gun_s_bow.webp">
             </div>
             <div class="gallery-wall-column">
-                <img src="assets/images/proj_crimson/icon_item_ammo_308win_wide.webp">
-                <img src="assets/images/proj_crimson/icon_item_ammo_arrowBox.webp">
-                <img style="width: 50%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_ammo_44mag.webp">
-                <img style="width: 75%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_throw_molotov.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/icon_item_ammo_308win_wide.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/icon_item_ammo_arrowBox.webp">
+                <img class="scroll-reveal" style="width: 50%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_ammo_44mag.webp">
+                <img class="scroll-reveal" style="width: 75%; display: flex; margin: auto" src="assets/images/proj_crimson/icon_item_throw_molotov.webp">
             </div>
         </div>
 
         <div id="s3" class="empty-space-x1"></div>
 
         <div class="content-grid">
-            <div class="v-container" style="justify-self: start">
+            <div class="v-container scroll-reveal" style="justify-self: start">
                 <h2>Levels</h2>
                 <div class="text-box contained body-font">
                     <p>
@@ -187,28 +191,24 @@
 
         <div class="gallery-wall">
             <div class="gallery-wall-column">
-                <img src="assets/images/proj_crimson/crimson_ss_tower.webp">
-                <img src="assets/images/proj_crimson/crimson_ss_park_start.webp">
-                <img src="assets/images/proj_crimson/crimson_ss_park_old.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/crimson_ss_tower.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/crimson_ss_park_start.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/crimson_ss_park_old.webp">
             </div>
             <div class="gallery-wall-column">
-                <img src="assets/images/proj_crimson/crimson_ss_park.webp">
-                <img src="assets/images/proj_crimson/crimson_ss_fps.webp">
-                
-                <img src="assets/images/proj_crimson/crimson_ss_tower_int.webp">
-                
+                <img class="scroll-reveal" src="assets/images/proj_crimson/crimson_ss_park.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/crimson_ss_fps.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/crimson_ss_tower_int.webp">
             </div>
             <div class="gallery-wall-column">
-                <img src="assets/images/proj_crimson/crimson_ss_road.webp">
-                <img src="assets/images/proj_crimson/crimson_ss_road_tunnel.webp">
-                
-                <img src="assets/images/proj_crimson/crimson_ss_church.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/crimson_ss_road.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/crimson_ss_road_tunnel.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/crimson_ss_church.webp">
             </div>
             <div class="gallery-wall-column">
-                <img src="assets/images/proj_crimson/crimson_ss_road_highway.webp">
-                <img src="assets/images/proj_crimson/crimson_ss_road_motel.webp">
-                
-                <img src="assets/images/proj_crimson/crimson_ss_test_warehouse.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/crimson_ss_road_highway.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/crimson_ss_road_motel.webp">
+                <img class="scroll-reveal" src="assets/images/proj_crimson/crimson_ss_test_warehouse.webp">
             </div>
         </div>
 
@@ -218,11 +218,10 @@
         <div class="v-container" style="width: 100%">
             <div class="quick-link-container">
                 <div></div>
-                <!--<a class="btn btn-font" href="proj_g_rhizome.html">PROJECT RHIZOME&nbsp;<i class="fa fa-arrow-circle-right"></i></a>-->
-                <a class="btn btn-font" href="proj_3d_atcw.html">A TOWN CALLED WOODS&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                <a class="btn btn-font" href="proj_g_rhizome.html">PROJECT RHIZOME&nbsp;<i class="fa fa-arrow-circle-right"></i></a>
+                <!--<a class="btn btn-font" href="proj_3d_atcw.html">A TOWN CALLED WOODS&nbsp;<i class="fa fa-arrow-circle-right"></i></a>-->
                 <div></div>
             </div>
-
             <div class="footnote">
                 <div><p>1.<a href="proj_3d_atcw.html">A Town Called Woods</a>is based on this concept.</p></div>
                 <div><p>This project was made with Godot, Blender, and Photoshop. The concept art and character design were made with Procreate. 2021 - 2024.</p></div>

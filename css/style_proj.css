@@ -22,7 +22,7 @@
     width: 100%;
 }
 
-div>p.caption {
+.image>p.caption {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -44,16 +44,22 @@ div>p.caption {
     transition: all 0.3s;
 }
 
-div:hover>p.caption {
+.image:hover>p.caption {
     opacity: 1;
     transform: scale(1);
+}
+
+.gallery p.caption {
+    opacity: 1;
+    transform: scale(1);
+    transition: none;
 }
 
 
 /**************** Interactive ****************/
 .btns-top {
     z-index: 99;
-    float: left;
+    float: top;
     position: fixed;
     top: 8px;
     padding: 32px 64px;
@@ -103,11 +109,6 @@ div:hover>p.caption {
     user-select: none;
 }
 
-.btn-icon-alt:hover,
-.btn-icon-alt:hover {
-    transform: scale(1.2);
-}
-
 .btn-icon-alt:active,
 .btn-icon-alt:active {
     transform: scale(1);
@@ -132,8 +133,8 @@ div:hover>p.caption {
 }
 
 .content-bg {
-    width: 100%;
-
+    /*margin: 0 8px;
+    border-radius: 24px;*/
     padding: 16px 0;
 }
 
@@ -236,9 +237,7 @@ div:hover>p.caption {
     transition: 0.4s;
 }
 
-.indicator:hover {
-    transform: scale(1.4);
-}
+
 
 .indicator.active {
     width: 20px;
@@ -269,10 +268,7 @@ div:hover>p.caption {
     user-select: none;
 }
 
-.btn-gallery-prev:hover,
-.btn-gallery-next:hover {
-    transform: scale(1.2);
-}
+
 
 .btn-gallery-prev:active,
 .btn-gallery-next:active {
@@ -336,9 +332,7 @@ div:hover>p.caption {
     text-align: left;
 }
 
-.dropdown-content button:hover {
-    background-color: #eee;
-}
+
 
 .dropdown-content button:active {
     background-color: #fff;
@@ -346,7 +340,32 @@ div:hover>p.caption {
 
 
 /**************** Small Screen Support ****************/
+@media not all and (hover: none) {
+    .btn-icon-alt:hover,
+    .btn-icon-alt:hover {
+        transform: scale(1.2);
+    }
+
+    .indicator:hover {
+        transform: scale(1.4);
+    }
+
+    .btn-gallery-prev:hover,
+    .btn-gallery-next:hover {
+        transform: scale(1.2);
+    }
+
+    .dropdown-content button:hover {
+        background-color: #eee;
+    }
+
+}
+
 @media only screen and (max-width: 1000px) {
+    .btns-top {
+        display: none;
+    }
+    
     .image {
         border-radius: 16px;
     }
@@ -359,18 +378,25 @@ div:hover>p.caption {
         width: 100%;
 
         margin: 0;
-        padding: 8px 12px;
+        padding: 4px 12px;
         border-radius: 0;
 
         font-size: 75%;
+        background: rgba(0, 0, 0, 0.5);
 
         opacity: 1;
         transform: scale(1);
     }
 
     .btns-top {
-        top: 8px;
-        padding: 24px 32px;
+        top: 0;
+        padding: 16px 16px;
+        grid-template-columns: auto auto;
+    }
+
+    .content-bg {
+        margin: 0;
+        border-radius: 0;
     }
 
     .content-grid {
@@ -389,10 +415,10 @@ div:hover>p.caption {
     }
 
     .gallery>* {
-        margin-right: 16px;
+        margin-right: 8px;
     }
 
-    .gallery.portrait>img {
+    .gallery.portrait>image {
         border-radius: 24px;
     }
 
@@ -419,6 +445,12 @@ div:hover>p.caption {
         gap: 16px;
         justify-content: center;
         text-align: center;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        left: 100%;
+        transform: translate(-100%, 0);
     }
 }
 

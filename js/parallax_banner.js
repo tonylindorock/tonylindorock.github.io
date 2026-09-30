@@ -15,7 +15,7 @@ function handleBanner(){
       var scrollOffset = -parseInt((window.scrollY / SPEED_RATIO));
       $(".banner").css({
         'transform': 'translateY(' + scrollOffset + 'px)',
-        '-webkit-transform': 'translateY(' + scrollOffset + 'px)'
+        '-webkit-transform': 'translate3d(0, ' + scrollOffset + 'px, 0)'
       });
     });
   }else{

@@ -73,9 +73,9 @@ function observeElementVis(){
     var elements = document.getElementsByClassName("scroll-reveal");
     for (var i = 0; i < elements.length; i++) {
         var e = elements[i];
-        if (isInViewport(e)){
+        if (isInViewport(e, true)){
             reveal(e);
-        }else{
+        }else if (! isInViewport(e)){
             hide(e);
         }
     }

@@ -14,7 +14,7 @@ function scrollToElement(id) {
   element.scrollIntoView();
 }
 
-function isInViewport(element) {
+function isInViewport(element, center = false) {
   var top = element.offsetTop;
   var left = element.offsetLeft;
   var width = element.offsetWidth;
@@ -27,9 +27,9 @@ function isInViewport(element) {
   }
 
   return (
-    top < (window.pageYOffset + window.innerHeight) &&
+    (top + Math.min(height / 4.0, 128) * center) < (window.pageYOffset + window.innerHeight) &&
     left < (window.pageXOffset + window.innerWidth) &&
-    (top + height) > window.pageYOffset &&
+    (top + height - (center ? Math.min(height / 4.0, 128) : 0)) > window.pageYOffset &&
     (left + width) > window.pageXOffset
   );
 }

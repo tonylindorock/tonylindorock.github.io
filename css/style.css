@@ -50,15 +50,24 @@
 }
 
 .anim-reveal {
-    animation: 1s ease 0.2s 1 slide-up-fade-in;
+    animation-name: slide-up-fade-in;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
     animation-fill-mode: backwards;
     will-change: transform, opacity;
 }
 
 .anim-hide {
-    animation: 1s ease 0s 1 fade-out;
+    animation: 0.5s ease-in-out 0s 1 fade-out;
     animation-fill-mode: forwards;
     will-change: opacity;
+}
+
+.anim-fade-on-load {
+    animation: 0.3s cubic-bezier(0, .66, .33, 1) 0s 1 scale-out-fade-in;
+    animation-fill-mode: backwards;
+    will-change: transform;
 }
 
 @keyframes scale-fade-in {
@@ -125,6 +134,9 @@ html, body {
 
     height: 100%;
     width: 100%;
+
+    height: 100vh;
+    min-height: 100vh;
 }
 
 html {
@@ -152,7 +164,7 @@ a {
 body {
     overflow-y: visible;
     background-color: #000; /* Website bg color here */
-    color: #fff; /* Text color here */
+    color: #eee; /* Text color here */
 
     font-family: "JetBrains Mono", Arial, sans-serif;
     font-size: 16px;
@@ -247,7 +259,7 @@ h3 {
 }
 
 .quote {
-    opacity: 0.6;
+    color: #999;
     font-style: italic;
 }
 
@@ -266,11 +278,6 @@ h3 {
     vertical-align: super;
     font-size: 75%;
 }
-  
-.font-superscript:hover {
-    border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.25);
-}
 
 .dark {
     color: #262626;
@@ -287,9 +294,16 @@ h3 {
     border-radius: 64px;
     padding: 12px 24px;
 
-    background-color: white;
-    color: black;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    color: white;
+    text-shadow: 0 0 10px black;
+    
     box-shadow: 0 0 32px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+    /*outline: 1px solid rgba(255, 255, 255, 0.25);*/
 
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
     -webkit-transition: 0.3s;
@@ -307,9 +321,7 @@ h3 {
     pointer-events: none;
 }
 
-.btn:hover {
-    transform: translateY(-6px);
-}
+
 
 .btn:active {
     transform: translateY(0);
@@ -332,18 +344,13 @@ h3 {
     z-index: 99;
 }
 
-.btn:hover .tooltip {
-    visibility: visible;
-}
-
 .btn-text {
     display: inline-block;
-    border: none;
     border-radius: 64px;
     padding: 8px 16px;
     margin: 0 12px;
 
-    background: none;
+    background-color: rgba(255, 255, 255, 0);
     color: white;
 
     transition: 0.3s;
@@ -357,18 +364,8 @@ h3 {
     -ms-user-select: none;
 }
 
-.btn-text:hover {
-    background-color: rgba(255, 255, 255, 0.25);
-}
-
 .btn-text:active {
     transform: translateY(4px);
-}
-
-.btn-text.current {
-    background-color: #fff;
-    color: #000;
-    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
 }
 
 .btn-text-banner {
@@ -388,10 +385,6 @@ h3 {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
-}
-
-.btn-text-banner:hover {
-    transform: scale(1.05);
 }
 
 
@@ -417,8 +410,8 @@ h3 {
 
     font-size: 2.75em;
     line-height: 1;
+
     color: white;
-    border: none;
 
     transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
     -webkit-transition: 0.3s;
@@ -432,8 +425,8 @@ h3 {
     user-select: none;
 }
 
-.btn-icon:hover {
-    transform: translateY(-4px);
+.btn-icon:active {
+    transform: translateY(0px);
 }
 
 .btn-icon i {
@@ -446,14 +439,25 @@ h3 {
 
 .btn-icon.shape {
     border-radius: 64px;
-    background-color: white;
-    color: #262626;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+    color: white;
 
     padding: 0 24px;
 
     font-size: 1.25em;
     box-shadow: 0 0 32px rgba(0, 0, 0, 0.2);
 }
+
+.btn-icon.shape:active {
+    transform: translateY(0px);
+}
+
+
 
 .btn-proj {
     position: relative;
@@ -481,26 +485,10 @@ h3 {
     transition-duration: 0.3s;
 }
 
-.anim-fade-on-load {
-    animation: 0.3s cubic-bezier(0, .66, .33, 1) 0s 1 scale-out-fade-in;
-    animation-fill-mode: backwards;
-    will-change: transform;
-}
-
 .btn-proj.outline {
     border: 1px solid #262626;
 }
 
-
-.btn-proj:hover {
-    transform: scale(1.05);
-    border: 1px solid #262626;
-}
-
-.btn-proj:hover .media-preview{
-    opacity: 1;
-    scale: 1;
-}
 
 .btn-proj:active {
     transform: scale(1);
@@ -542,7 +530,7 @@ h3 {
 
     margin-top: 24px;
     margin-bottom: 4px;
-    font-size: 24px;
+    font-size: 1.5em;
 }
 
 .btn-proj div>p.des {
@@ -550,7 +538,7 @@ h3 {
 
     font-family: "Barlow Bold", Arial, sans-serif;
     text-transform: uppercase;
-    font-size: 13px;
+    font-size: 0.9em;
     letter-spacing: 2px;
     opacity: 50%;
 }
@@ -672,6 +660,20 @@ h3 {
     flex-shrink: 1;
 }
 
+.center-container {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.center-container img{
+    margin: auto;
+    object-fit: contain;
+}
+
 .empty-space-x05 {
     height: 64px;
 }
@@ -686,14 +688,16 @@ h3 {
 
 .nav-bar {
     display: flex;
-    flex: none;
+    flex: content;
 
     align-items: center;
     overflow: hidden;
     z-index: 999;
     width: 100%;
 
-    padding: 16px 32px;
+    padding: 16px;
+    padding-left: 48px;
+    padding-right: 64px;
 
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(5px);
@@ -718,8 +722,8 @@ h3 {
 }
 
 .footnote>div{
-    margin: 16px;
-    padding: 16px 15%;
+    margin: 8px 16px;
+    padding: 10px 15%;
 
     border-radius: 24px;
     background-color: #111;
@@ -747,17 +751,13 @@ a.hyperlink {
     max-width: 1152px;
 }
 
-.footnote a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
+
 
 .footnote a:active {
     background-color: rgba(255, 255, 255, 0.1);
 }
 
-a.hyperlink:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-}
+
 
 a.hyperlink:active {
     background-color: rgba(255, 255, 255, 0.1);
@@ -785,7 +785,7 @@ a.hyperlink:active {
     height: 100%;
     width: 100%;
     scroll-snap-align: start;
-    scroll-snap-stop: always;
+    scroll-snap-stop: normal;
 
     display: flex;
     position: relative;
@@ -800,6 +800,67 @@ a.hyperlink:active {
 }
 
 
+@media (hover: hover) {
+    .font-superscript:hover {
+        border-radius: 2px;
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .btn:hover {
+        transform: translateY(-4px);
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn:hover .tooltip {
+        visibility: visible;
+    }
+
+    .btn-text:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-text-banner:hover {
+        transform: scale(1.05);
+    }
+
+    .btn-icon:hover {
+        transform: translateY(-4px);
+    }
+
+    .btn-icon.shape:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-proj:hover {
+        transform: scale(1.05);
+        border: 1px solid #262626;
+    }
+
+    .btn-proj:hover .media-preview{
+        opacity: 1;
+        scale: 1;
+    }
+
+    .footnote a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    a.hyperlink:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+}
+
+.btn-text.current {
+    background-color: rgba(255, 255, 255, 0.25);
+    background-color: #ffcc00bb;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+
+    color: white;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.1);
+}
+
 
 /**************** Small Screen Support ****************/
 @media only screen and (max-width: 1000px) {
@@ -809,10 +870,28 @@ a.hyperlink:active {
 
     footer {
         display: grid;
-        row-gap: 64px;
+        padding: 32px 16px;
+
+        row-gap: 32px;
         grid-template-columns: auto;
         align-content: center;
         justify-content: space-evenly;
+
+    }
+
+    .nav-bar {
+        display: grid;
+        grid-template-columns: auto;
+        row-gap: 8px;
+
+        align-content: center;
+        justify-content: space-evenly;
+
+        text-align: center;
+    }
+
+    .nav-bar-title {
+        font-size: 1em;
     }
 
     /**************** Typefaces ****************/
@@ -849,10 +928,35 @@ a.hyperlink:active {
 
     /**************** Interactive ****************/
     .btn-text {
-        margin: 0 4px;
+        margin: 4px 4px;
+        background-color: #ffffff11;
+    }
+
+    #btn-gotop {
+        margin: 32px;
+        bottom: 32px;
+    }
+
+    .btn-proj {
+        border-radius: 16px;
+    }
+
+    .btn-proj div{
+        padding: 0 16px;
+    }
+
+    .btn-proj div>p.title {
+        font-size: 1.25em;
+        margin-top: 16px;
+    }
+
+    .btn-proj div>p.des {
+        font-size: 0.75em;
+        padding-bottom: 16px;
     }
 
     /**************** Reusables ****************/
+
     .banner {
         min-height: 50%;
         width: 100%;
@@ -896,7 +1000,7 @@ a.hyperlink:active {
     }
 
     .footnote>div{
-        margin: 16px 0;
+        margin: 8px 0;
         padding: 16px 16px;
         border-radius: 0;
     }
